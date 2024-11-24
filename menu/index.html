@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu</title>
+    <link rel="stylesheet" href="estilo/style.css">
+</head>
+<body>
+    <div class="menu">
+        <nav>
+            <ul id="lista_menu">
+                <li class="menu_materias">
+                    <a class="a_menu" href="#" ><img src="img/materias.png" alt=""><BR><p class="opcoes_menu" >MATÉRIAS</p><div id="mat-seta"></div></a>
+
+                    <div class="opcoes_materias">
+                        <a class="a_materia" href="#" id="Mat1">MATÉRIAS EM TRAMITAÇÃO</a>
+                        <a class="a_materia" href="#" id="Mat2">MATÉRIAS TRAMITADAS</a>
+                        <a class="a_materia" href="#" id="Mat3">MATÉRIAS ARQUIVADAS</a>
+                    </div>
+                </li>
+                <li>
+                    <a class="a_menu" href="#"> <img src="img/sessao.png" alt=""><br><p class="opcoes_menu">SESSÕES</p></a>
+                </li>
+                <li>
+                    <a class="a_menu" href="#"> <img src="img/vereadores.png" alt=""><br><p class="opcoes_menu">VEREADORES</p></a>
+                </li>
+                <li>
+                    <a class="a_menu" href="#"> <img src="img/configuracoes.png" alt=""><br><p class="opcoes_menu">CONFIGURAÇÕES</p></a>
+                </li>
+                <li>
+                    <a class="a_menu" href="#"> <img src="img/operadores.png" alt=""><br><p class="opcoes_menu">OPERADORES</p></a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+    <a class="a_adicionar" href="#">ADICIONAR</a>
+
+
+    <script>
+
+        // Variável que armazena o item selecionado
+        var ItemSelected;
+
+        function clicar_opcao(obj){
+            
+            //Mudar Seleção
+            
+            //Desmarca o item selecionado anterior
+            desmarcar_item(ItemSelected);
+            
+            //Mudar e Marcar o novo item
+            ItemSelected = Menu._myItens[obj];
+            marcar_item(ItemSelected);
+        }
+
+        function marcar_item(item){
+            item.iten.style.border  = "3.5px solid #00d5e9";
+            item.iten.style.background = "#111E48";
+        }
+
+        function desmarcar_item(item){
+            item.iten.style.border  = "";
+            item.borda.style.borderBottom  = "";
+            item.iten.style.background = "";
+        }
+        
+        function marcar_tipo_materia(texto){
+            Menu._myItens[0].borda.innerHTML = texto;
+            //Ao selecionar um item do menu marca novamente a opção materias
+            clicar_opcao(0);
+        }
+
+        var Menu = {
+
+            //Vetor de itens do menu
+            _myItens:[],
+            
+            //Adiciona um novo item ao menu
+            adicionar:function(){
+                this._myItens.push({
+                iten: null,
+                borda: null,
+
+                preencher:function(count){
+                    this.iten = document.getElementsByClassName('a_menu')[count];
+                    this.borda = document.getElementsByClassName('opcoes_menu')[count];
+
+                    this.iten.addEventListener('click', function(e){
+                        clicar_opcao(count);
+                    }, false);
+                }
+                
+                });
+            },
+
+        }
+
+       function Main(){
+
+        //Adiciona a função de clique do menu com 5 itens
+            for(var i = 0; i < 5; i++){
+
+                Menu.adicionar();
+                Menu._myItens[i].preencher(i);
+                
+            }
+
+            //Inicia marcando o item 0
+            ItemSelected = Menu._myItens[0];
+            marcar_item(ItemSelected);
+
+        }
+
+        Main();
+        
+        marcar_tipo_materia("MATÉRIAS EM TRAMITAÇÃO");
+
+            document.getElementById("Mat1").addEventListener('click', function(e){
+                marcar_tipo_materia("MATÉRIAS EM TRAMITAÇÃO");
+            }, false);
+
+            document.getElementById("Mat2").addEventListener('click', function(e){
+                marcar_tipo_materia("MATÉRIAS TRAMITADAS");
+            }, false);
+
+
+            document.getElementById("Mat3").addEventListener('click', function(e){
+                marcar_tipo_materia("MATÉRIAS ARQUIVADAS");
+            }, false);
+
+        
+    </script>
+
+
+</body>
+</html>

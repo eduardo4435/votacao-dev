@@ -1,0 +1,282 @@
+@charset "UTF-8";
+
+@font-face {
+  font-family:'Pathway';
+  src: url(fonts/PathwayGothicOne-Regular.ttf);
+}
+
+@font-face {
+  font-family:'Courier';
+  src: url(fonts/CourierPrime-Regular.ttf);
+}
+
+  .modal-container {
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, .5);
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    z-index: 60000;
+    display: none;
+    justify-content: center;
+    align-items: center;
+}
+ 
+  .div_linha{
+	display:flex;
+	flex-direction: row;
+}
+.input{
+	font-family:'Courier',monospace;
+	font-size: 2px;
+	line-height:1.66667em;
+	color:#2a2426;
+	width:100%;
+	padding:0 5px;
+	height:34px;
+	border:2px solid #988c77;
+	background:transparent;
+	box-sizing:border-box;
+}
+.input2{
+	font-family:'Courier',monospace;
+	font-size:1.125em;
+	line-height:1.66667em;
+	color:#2a2426;
+	width:100%;
+	padding:0 5px;
+	height:60px;
+	border:2px solid #988c77;
+	background:transparent;
+	box-sizing:border-box;
+}
+.input3{
+	font-family:"PT Mono",monospace;
+	font-size:1.0em;
+	line-height:1.66667em;
+	color:#2a2426;
+	width:100%;
+	padding:0 5px;
+	height:22px;
+	border:0px solid #988c77;
+	background:transparent;
+	box-sizing:border-box;
+	-webkit-appearance: none;  /* Remove estilo padrão do Chrome */
+	-moz-appearance: none;
+}
+
+input.button{
+	font-family:'Pathway',monospace;
+	font-size:1.125em;
+	line-height:1.66667em;
+	cursor:pointer;color:#988c77;
+	text-transform:uppercase;
+	border:2px solid #988c77;
+	background:transparent;
+	display:block;
+	width:200px;
+	padding-top:5px;
+	-webkit-box-shadow:5px 5px 0 -2px #cbc6b9,5px 5px 0 0 #988c77;
+	-moz-box-shadow:5px 5px 0 -2px #cbc6b9,5px 5px 0 0 #988c77;
+	box-shadow:5px 5px 0 -2px #cbc6b9,5px 5px 0 0 #988c77;
+	transition:.3s;
+}
+input.button:hover{
+	-webkit-box-shadow:3px 3px 0 -2px #cbc6b9,3px 3px 0 0 #988c77;
+	-moz-box-shadow:3px 3px 0 -2px #cbc6b9,3px 3px 0 0 #988c77;
+	box-shadow:3px 3px 0 -2px #cbc6b9,3px 3px 0 0 #988c77;
+}
+  
+
+body {
+    margin: 0px;
+    font-family: Courier New;
+    font-size: 12px;
+    text-decoration: none;
+}
+
+#fonte-sessao {
+  font-family: 'Pathway';
+  font-size: 17px;
+  color: black;
+}
+.mostrar {
+    display: flex;
+}
+
+
+
+.mostrar .modal {
+    animation: modal .7s;
+}
+
+.modal {
+  background: white;
+  background-image: linear-gradient(to left,#575757,50%,#414141);
+  min-width: 550px;
+  max-width: 900px;
+  padding: 20px;
+  border: 10px solid #cd973c;
+  border-radius: 20px;
+  box-shadow: 0 0 5px 5px rgba(0, 0, 0, .3);
+  position: relative;
+}
+.input {
+  font-family: 'Courier', monospace;
+  font-weight: 600;
+  font-size: 1em;
+  line-height: 1.66667em;
+  color: #766d6d;
+  width: 100%;
+  padding: 0 6px;
+  margin: 3px 5px 0px 0px;
+  height: 34px;
+  border: 3px solid #988c77;
+  border-radius: 0px 7px 7px 7px;
+  background: transparent;
+  box-sizing: border-box;
+}
+
+.input2 {
+  font-family: 'Courier', monospace;
+  font-weight: 600;
+  font-size: 1em;
+  line-height: 1.4em;
+  color: #766d6d;
+  width: 100%;
+  padding: 0 5px;
+  border: 2.3px solid #988c77;
+  border-radius: 0px 15px 15px 15px;
+  background: transparent;
+  box-sizing: border-box;
+}
+
+input.button:hover {
+  -webkit-box-shadow: 3px 3px 0 -2px #a89f8d, 3px 3px 0 0 #a89f8d;
+  -moz-box-shadow: 3px 3px 0 -2px #cbc6b9, 3px 3px 0 0 #988c77;
+  box-shadow: 3px 3px 0 -2px #cac7c1, 3px 3px 0 0 #a89f8d;
+}
+
+input.button {
+  font-family: 'Pathway', monospace;
+  font-size: 1.4em;
+  line-height: 1.66667em;
+  cursor: pointer;
+  color: #fff;
+  text-shadow: 2px 2px 5px black;
+  text-transform: uppercase;
+  border: 2.5px solid #cd973c;
+  border-radius: 10px;
+  background: transparent;
+  background-image: linear-gradient(to top, #1a1a1a, #646464, #1a1a1a);
+  display: block;
+  width: 200px;
+  padding-top: 5px;
+  -webkit-box-shadow: 5px 5px 0 -2px #cd973c, 5px 5px 0 0 #cac7c1;
+  -moz-box-shadow: 5px 5px 0 -2px #cac7c1, 5px 5px 0 0 #a89f8d;
+  box-shadow: 5px 5px 0 -2px #cac7c1, 5px 5px 0 0 #a89f8d;
+  transition: .3s;
+}
+
+
+.fechar {
+  position: absolute;
+  font-size: 1.5em;
+  top: -25px;
+  right: -25px;
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  border: 3.5px solid white;
+  background: #787570;
+  color: white;
+  cursor: pointer;
+  box-shadow: 0 4px 4px 0 rgba(0, 0, 0, .3);
+  transform: translateX(0) scale(1);
+  transition: .5s;
+}
+button.fechar:hover,
+.fechar:focus {
+  background-color: rgb(173 68 68);
+  transform: translateX(0px) scale(1.1);
+}
+.input:hover{}
+.input:focus{
+	outline:none;
+	border:3px solid #e00;
+	border-color:#e00;
+	border-color:#cbc6b9;
+}
+.input2:focus{
+	outline:none;
+	border:3px solid #e00;
+	border-color:#e00;
+	border-color:#cbc6b9;
+}
+
+
+#div_flexivel {
+  display: flex;
+}
+
+form .input {
+  margin-top: 5px;
+}
+
+#form_sessao {
+  padding-right: 10px;
+  border: 3px solid #cd973c;
+  border-radius: 10px 10px 10px 10px;
+  padding: 10px;
+  background-image: linear-gradient( to right,  #E7E7E4, #E7E7E4 );
+}
+
+
+#form_infor {
+  padding-left: 10px;
+  border: 3px solid #cd973c;
+  border-radius: 10px 10px 10px 10px;
+  margin-left:10px;
+  background-image: linear-gradient( to right,  #DBE2F0,  #DBE2F0 );
+  
+}
+
+#txt_sessao {
+  padding: 0px 10px 10px 10px;
+  border-radius: 10px 10px 10px 10px;
+  border: 3px solid #cd973c;
+  margin-top: 10px;
+  background-image: linear-gradient( #E7E7E4, #DBE2F0 );
+
+}
+
+ #div_legis {
+  width: 25%;
+}
+
+
+#primeira_linha {
+  padding-top: 15px;
+  padding-bottom: 45px;
+}
+
+
+#txt_sessao p {
+  color: #1a1a1a;
+  margin-bottom: 3px;
+  margin-top: 3px;
+}
+
+#exercicio_sessao {
+  padding-left: 8px;
+  
+}
+
+#data_sessao {
+  width: 40%;
+}
+
+#final_legislatura .input {
+  max-width: 142px;
+}

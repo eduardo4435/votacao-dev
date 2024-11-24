@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>tela cadastrar sessão site sdv</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="modal-sessao" class="modal-container mostrar">
+		<div class="modal" id="fonte-sessao">
+			<button class="fechar">×</button>
+		<div id="div_flexivel">	
+			<form id="form_sessao">
+			
+				<div class="div_linha">
+				<div id="div_sess">
+				Tipo de Sessão: <select name="tipo_sessao" id="tipo_sessao" class="input" onchange="MudarOutros(this.id)">
+				<option value="----------">Tipo de Sessão</option>
+				<option value="----------">----------</option>
+				<option value="ABERTURA DE PERÍODO LEGISLATIVO">ABERTURA DE PERÍODO LEGISLATIVO</option>
+				<option value="ADMINISTRATIVA">ADMINISTRATIVA</option>
+				<option value="AUDIÊNCIA PÚBLICA">AUDIÊNCIA PÚBLICA</option>
+				<option value="ENCERRAMENTO DE PERÍODO LEGISLATIVO">ENCERRAMENTO DE PERÍODO LEGISLATIVO</option>
+				<option value="ESPECIAL">ESPECIAL</option>
+				<option value="EXTRAORDINÁRIA">EXTRAORDINÁRIA</option>
+				<option value="ITINERANTE">ITINERANTE</option>
+				<option value="ORDINÁRIA">ORDINÁRIA</option>
+				<option value="SOLENE">SOLENE</option>
+				<option value="OUTROS">OUTROS</option>
+				</select>
+				</div>&nbsp; &nbsp;					
+			</div>	
+			<br>	
+			<div class="div_linha">	
+				<div id="numero_sessao">
+					Número da Sessão: <input type="text" size="1" maxlength="4" class="input" placeholder="Núm." id="num_sess" name="num_sess" autocomplete="off" onchange="formata_sessao(this.id)" onkeyup="formata_sessao(this.id)">
+				</div>&nbsp; &nbsp;				
+				<div id="data_sessao">
+					Data da Sessão: <input type="text" size="1" maxlength="5" value="24/08" class="input" placeholder="DD/MM" id="data_sess" name="data_sess" autocomplete="off" onchange="formata_sessao(this.id)" onfocusout="checkDate(this.id);" onkeyup="formata_sessao(this.id)">
+				</div>
+				<div id="exercicio_sessao">
+					Exercício da Sessão: <input type="text" size="1" maxlength="4" value="2024" class="input" placeholder="Exercício" id="exer_sess" name="exer_sess" autocomplete="off" onchange="formata_sessao(this.id)" onkeyup="formata_sessao(this.id)">
+				</div>&nbsp; &nbsp;
+				</div>
+				<br>
+				<div class="div_linha">				
+					<div id="div_per">
+					Situação: <select name="situacao" id="situacao" class="input" onchange="MudarOutros(this.id)">
+					<option value="----------">Situação</option>
+					<option value="----------">----------</option>
+					<option value="ABERTA">ABERTA</option>
+					<option value="ENCERRADA">ENCERRADA</option>
+					</select>
+					</div>&nbsp; &nbsp;			
+					</div>
+			</form>
+			<form id="form_infor">
+
+				<div class="div_linha" id="primeira_linha">
+					<div id="div_legis">
+					Legislatura: <input type="text" size="1" maxlength="3" class="input" placeholder="Núm." id="legislatura" name="legislatura" autocomplete="off" onchange="formata_sessao(this.id)" onkeyup="formata_sessao(this.id)">
+					</div>&nbsp; &nbsp;				
+					<div>
+					Início da Legislatura: <input type="text" size="1" maxlength="4" class="input" placeholder="Ano" id="ini_legis" name="ini_legis" autocomplete="off" onchange="formata_sessao(this.id)" onkeyup="formata_sessao(this.id)">
+					</div>&nbsp; &nbsp;				
+					<div id="final_legislatura">
+					Final da Legislatura: <input type="text" size="1" maxlength="4" class="input" placeholder="Ano" id="fim_legis" name="fim_legis" autocomplete="off" onchange="formata_sessao(this.id)" onkeyup="formata_sessao(this.id)">
+					</div>				
+					</div>
+					
+				<div class="div_linha" id="segunda_linha">
+					<div id="div_per">
+					Período: <select name="periodo" id="periodo" class="input" onchange="MudarOutros(this.id)">
+					<option value="----------">Período</option>
+					<option value="----------">----------</option>
+										<option value="1º PERÍODO">1º PERÍODO</option>
+										<option value="2º PERÍODO" selected="">2º PERÍODO</option>
+										<option value="3º PERÍODO">3º PERÍODO</option>
+										<option value="4º PERÍODO">4º PERÍODO</option>
+										<option value="5º PERÍODO">5º PERÍODO</option>
+										<option value="6º PERÍODO">6º PERÍODO</option>
+										<option value="7º PERÍODO">7º PERÍODO</option>
+										<option value="8º PERÍODO">8º PERÍODO</option>
+									</select>
+					</div>&nbsp; &nbsp;				
+					<div>
+					Início do Período: <input type="text" size="1" maxlength="5" class="input" placeholder="DD/MM" id="ini_peri" name="ini_peri" autocomplete="off" onchange="formata_sessao(this.id)" onkeyup="formata_sessao(this.id)">
+					</div>&nbsp; &nbsp;				
+					<div>
+					Final do Período: <input type="text" size="1" maxlength="5" class="input" placeholder="DD/MM" id="fim_per" name="fim_per" autocomplete="off" onchange="formata_sessao(this.id)" onkeyup="formata_sessao(this.id)">
+					</div>&nbsp; &nbsp;		
+					
+				</div>
+				
+				
+				<br>
+				
+				
+			</form>
+		</div>	
+			<form id="txt_sessao">	
+				<br>
+				<p>Sessão:</p>
+				<textarea style="resize: none" rows="4" cols="35" id="resumo_sessao" class="input2" placeholder=""></textarea>
+				
+				<br><br>
+				<form onsubmit="return fun_cad_sessao()" method="POST" enctype="multipart/form-data" name="frmLogin" action="">
+					<input name="tipo_envio" type="hidden" value="1">
+					<!--
+					<input name="json" id="json" type="hidden" value="{}">
+					-->
+					<input type="submit" class="button" value="Enviar">
+				</form>
+			</form>
+			
+		</div>
+	</div>
+</body>
+</html>

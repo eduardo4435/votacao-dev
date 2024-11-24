@@ -1,0 +1,185 @@
+@charset "UTF-8";
+
+@font-face {
+    font-family: 'Pathway';
+    src: url(../fonts/PathwayGothicOne-Regular.ttf);
+}
+
+:root {
+    --azul:#111E48;
+    --azul_claro: #00d5e9;
+    --selecionado: #020e14;
+    --dourado: #cd973c;
+    --branco: #fff;
+    --fontemenu: 'Pathway', 'Courier New', Courier, monospace;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.menu {
+    font-family: var(--fontemenu);
+    font-size: 1.4vw;
+}
+
+/*.menu{
+    position: sticky;
+    top: 0px;  
+}*/
+
+#lista_menu { 
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    align-items: center;
+    width: 100%;
+    list-style: none;
+    padding: 0.5rem 0;
+    text-align: center;
+    background-color: var(--azul);
+}
+.a_menu {
+    display: block;
+    padding: 6% 8%;
+    text-decoration: none;
+    margin: 0 2%;
+    border: 3.5px solid var(--azul);
+    transition: .5s;
+    color: var(--branco);
+    background-color: var(--selecionado);
+    border-radius: 10px;
+    width: 16vw;
+    cursor: pointer;
+    user-select: none;
+    min-width: 160px;
+}
+
+
+.a_menu:hover {
+    background-color: var(--selecionado);
+    box-shadow: inset 0px 0px 15px 20px var(--selecionado);
+}
+.opcoes_materias {
+    position: absolute;
+    transform-origin: 0%;
+    transform: translateY(-10%);
+    opacity: 0;
+    visibility: hidden;
+    box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.388);
+    transition: .2s;
+    width: 250px;
+}
+.opcoes_materias a{
+    background-color: var(--branco);
+}
+
+.menu_materias {
+    position: relative;
+}
+
+
+.menu_materias:hover .opcoes_materias {
+    visibility: visible;
+    transform: translateY(15%);
+    opacity: 100%;
+    
+}
+
+.menu_materias:active .a_menu{
+    transform: scale(0.9);
+    transition: 0s
+}
+
+#mat-seta::after {
+    content: url('../img/seta.ico'); 
+}   
+
+#mat-seta {
+    position: absolute;
+    bottom: 15px;
+    right: 10px;
+    transform: rotate(180deg);
+    transition: .2s;
+}
+
+.menu_materias:hover #mat-seta {
+    transform: rotate(0deg);
+    transform: translate(1px, -7px);
+}
+
+.a_materia {
+    display: block;
+    padding: 11px 17px;
+    text-decoration: none;
+    margin: 0px;
+    transition: .3s;
+    color: var(--azul);
+    user-select: none;
+}
+
+
+.a_materia:hover {
+    background-color: var(--selecionado);
+    color: var(--branco);
+}
+
+#lista_menu a img {
+    display: flex;
+    justify-content: center;
+    margin: auto;
+    transition: .3s;   
+}
+#lista_menu a:hover img{
+    transform: translateX(0px) scale(1.2);
+}
+
+#lista_menu a:hover{
+    background-color: var(--azul);
+}
+.opcoes_menu{
+    transition: .3s;
+    border-bottom: 3.5px solid var(--azul);
+}
+
+#lista_menu a:hover .opcoes_menu {
+    transform: translateX(0px) scale(1.1);
+    border-bottom: 3.5px solid var(--dourado);
+}
+
+#lista_menu a:active {
+    transform: scale(0.9);
+    transition: 0s
+}
+
+#lista_menu a:active .opcoes_menu{
+    border-bottom: 3.5px solid var(--azul_claro);
+}
+
+.a_adicionar {
+    font-family: var(--fontemenu);
+    position: absolute;
+    left: 20px;
+    cursor: pointer;
+    user-select: none;
+    padding: 10px;
+    border: 3px solid var(--dourado);
+    border-radius: 20px;
+    color: var(--branco);
+    background-color: var(--azul);
+    text-decoration: none;
+    transition: .5s;
+}
+
+.a_adicionar:hover {
+    transform: scale(1.1);
+    border: 3px solid var(--azul_claro);
+}
+
+.a_adicionar:active {
+    transform: scale(0.9);
+    border: 3px solid var(--azul_claro);
+    box-shadow: 0px 0px 10px 3px var(--azul_claro);
+}

@@ -30,7 +30,7 @@ body, html {
     align-items: center;
     flex-flow: row wrap;
     min-width: 1400px;
-    height: 50vh;
+    height: 350px;
     padding: 10px;
     background-color: #065478;
     border-radius: 15px;

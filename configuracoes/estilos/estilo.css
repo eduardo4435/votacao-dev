@@ -20,6 +20,7 @@ body, html {
 }
 
 #conteiner {
+    width: 100vw;
     background-color: #E9EFEF;
     padding: 20px;
 }
@@ -28,8 +29,8 @@ body, html {
     display: flex;
     justify-content: space-around;
     align-items: center;
-    flex-flow: row wrap;
-    min-width: 1400px;
+    flex-flow: row nowrap;
+    min-width: 1296.1px;
     height: 350px;
     padding: 10px;
     background-color: #065478;
@@ -70,7 +71,7 @@ body, html {
     padding-left: 10px;
     padding-right: 10px;
     text-align: center;
-    font-size: 19px;
+    font-size: 1.2em;
     transform: translateY(10px);
     transition: .3s;
 }
@@ -103,7 +104,7 @@ body, html {
 }
 
 .opcoes-config:hover #linha {
-    width: 185px;
+    width: 82%;
     transform: translateY(-20px);
     opacity: 100%;
 }

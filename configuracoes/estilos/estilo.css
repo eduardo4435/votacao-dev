@@ -29,7 +29,6 @@ body, html {
     justify-content: space-around;
     align-items: center;
     flex-flow: row nowrap;
-    min-width: 1296.1px;
     height: 350px;
     padding: 10px;
     background-color: #065478;
